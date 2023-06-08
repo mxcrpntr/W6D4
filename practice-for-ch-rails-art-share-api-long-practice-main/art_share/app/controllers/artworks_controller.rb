@@ -1,10 +1,10 @@
 class ArtworksController < ApplicationController
     def index
         user = User.find(params[:user_id])
-        artworks = user.artworks
+        artworks = user.artworks + user.shared_artworks
         render json: artworks
-    
-    
+
+
       end
       def create
         artwork = Artwork.new(params_permit)

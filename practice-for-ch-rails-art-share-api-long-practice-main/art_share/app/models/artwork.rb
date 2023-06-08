@@ -20,4 +20,8 @@ class Artwork < ApplicationRecord
 
     has_many :artwork_shares,
         dependent: :destroy
+
+
+    has_many :comments,
+        dependent: :destroy
 end
